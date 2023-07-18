@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+{{ parent() }}
+    <body>
+    <div class="container-md">
+        <div class="row">
+            {% for order in orders %}
+                <div class="col-sm-3">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4>{{ order.firstName }} {{ order.lastName }}</h4>
+                            <p> {{ order.product.name }}</p>
+                            <p>€{{ order.price }}</p>
+                            <p>{{ order.adress }}</p>
+                            <p>{{ order.zipcode }}</p>
+                            <p>{{ order.phoneNumber }}</p>
+
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    </body>
+{% endblock %}
